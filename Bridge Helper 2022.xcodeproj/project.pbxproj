@@ -13,6 +13,10 @@
 		2113DF28281603DB00E5BE15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2113DF16281603D500E5BE15 /* ContentView.swift */; };
 		2113DF29281603DB00E5BE15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2113DF17281603DB00E5BE15 /* Assets.xcassets */; };
 		2113DF2A281603DB00E5BE15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2113DF17281603DB00E5BE15 /* Assets.xcassets */; };
+		2113DF342817795C00E5BE15 /* Cartas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2113DF332817795C00E5BE15 /* Cartas.swift */; };
+		2113DF352817795C00E5BE15 /* Cartas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2113DF332817795C00E5BE15 /* Cartas.swift */; };
+		2120B13B2818EAC4006BA400 /* SelectorModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2120B13A2818EAC4006BA400 /* SelectorModelView.swift */; };
+		2120B13C2818EAC4006BA400 /* SelectorModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2120B13A2818EAC4006BA400 /* SelectorModelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,8 @@
 		2113DF1C281603DB00E5BE15 /* Bridge Helper 2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bridge Helper 2022.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2113DF22281603DB00E5BE15 /* Bridge Helper 2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bridge Helper 2022.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2113DF24281603DB00E5BE15 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		2113DF332817795C00E5BE15 /* Cartas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cartas.swift; sourceTree = "<group>"; };
+		2120B13A2818EAC4006BA400 /* SelectorModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorModelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,8 @@
 			children = (
 				2113DF15281603D500E5BE15 /* Bridge_Helper_2022App.swift */,
 				2113DF16281603D500E5BE15 /* ContentView.swift */,
+				2113DF332817795C00E5BE15 /* Cartas.swift */,
+				2120B13A2818EAC4006BA400 /* SelectorModelView.swift */,
 				2113DF17281603DB00E5BE15 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -178,6 +186,8 @@
 			files = (
 				2113DF27281603DB00E5BE15 /* ContentView.swift in Sources */,
 				2113DF25281603DB00E5BE15 /* Bridge_Helper_2022App.swift in Sources */,
+				2113DF342817795C00E5BE15 /* Cartas.swift in Sources */,
+				2120B13B2818EAC4006BA400 /* SelectorModelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +197,8 @@
 			files = (
 				2113DF28281603DB00E5BE15 /* ContentView.swift in Sources */,
 				2113DF26281603DB00E5BE15 /* Bridge_Helper_2022App.swift in Sources */,
+				2113DF352817795C00E5BE15 /* Cartas.swift in Sources */,
+				2120B13C2818EAC4006BA400 /* SelectorModelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
