@@ -6,12 +6,10 @@
 //
 
 import Foundation
-import SwiftUI
 
 class Cartas : ObservableObject {
     var suit : String
     @Published  var deck : Array<card> = []
-//    ,"hearts","diamonds","clubs"]
     private let honors = ["ace","king","queen","jack"]
     init(_ suit: String) {
         self.suit = suit

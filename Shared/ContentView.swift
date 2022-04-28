@@ -64,35 +64,8 @@ struct ContentView: View {
             .padding()
         }
     }
-
-
-
-struct CartaView: View {
-    @State var isUp : Bool
-    var nameCard : String
-    var body: some View {
-        ZStack{
-            Image(nameCard)
-                .resizable()
-                .frame(width: 63, height: 84)
-                .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: 1)
-//                .cornerRadius(20)
-            RoundedRectangle(cornerRadius: 12)
-                .stroke()
-                .frame(width: 75, height: 100)
-                .foregroundColor(.black)
-            RoundedRectangle(cornerRadius: 12)
-                .fill()
-                .frame(width: 75, height: 100)
-                .foregroundColor(.green)
-                .opacity(isUp ? 0 : 1)
-        }
-        .onTapGesture {
-            isUp.toggle()
-        }
-    }
 }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

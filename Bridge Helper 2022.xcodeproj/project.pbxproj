@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		210DB917281AC0B100210EED /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210DB916281AC0B100210EED /* GameModel.swift */; };
 		210DB918281AC0B100210EED /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210DB916281AC0B100210EED /* GameModel.swift */; };
+		210DB91A281AC1B400210EED /* CartaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210DB919281AC1B400210EED /* CartaView.swift */; };
+		210DB91B281AC1B400210EED /* CartaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210DB919281AC1B400210EED /* CartaView.swift */; };
 		2113DF25281603DB00E5BE15 /* Bridge_Helper_2022App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2113DF15281603D500E5BE15 /* Bridge_Helper_2022App.swift */; };
 		2113DF26281603DB00E5BE15 /* Bridge_Helper_2022App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2113DF15281603D500E5BE15 /* Bridge_Helper_2022App.swift */; };
 		2113DF27281603DB00E5BE15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2113DF16281603D500E5BE15 /* ContentView.swift */; };
@@ -23,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		210DB916281AC0B100210EED /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		210DB919281AC1B400210EED /* CartaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartaView.swift; sourceTree = "<group>"; };
 		2113DF15281603D500E5BE15 /* Bridge_Helper_2022App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge_Helper_2022App.swift; sourceTree = "<group>"; };
 		2113DF16281603D500E5BE15 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2113DF17281603DB00E5BE15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 				2113DF15281603D500E5BE15 /* Bridge_Helper_2022App.swift */,
 				2113DF16281603D500E5BE15 /* ContentView.swift */,
 				210DB916281AC0B100210EED /* GameModel.swift */,
+				210DB919281AC1B400210EED /* CartaView.swift */,
 				2113DF332817795C00E5BE15 /* Cartas.swift */,
 				2120B13A2818EAC4006BA400 /* SelectorModelView.swift */,
 				2113DF17281603DB00E5BE15 /* Assets.xcassets */,
@@ -190,6 +194,7 @@
 			files = (
 				210DB917281AC0B100210EED /* GameModel.swift in Sources */,
 				2113DF27281603DB00E5BE15 /* ContentView.swift in Sources */,
+				210DB91A281AC1B400210EED /* CartaView.swift in Sources */,
 				2113DF25281603DB00E5BE15 /* Bridge_Helper_2022App.swift in Sources */,
 				2113DF342817795C00E5BE15 /* Cartas.swift in Sources */,
 				2120B13B2818EAC4006BA400 /* SelectorModelView.swift in Sources */,
@@ -202,6 +207,7 @@
 			files = (
 				210DB918281AC0B100210EED /* GameModel.swift in Sources */,
 				2113DF28281603DB00E5BE15 /* ContentView.swift in Sources */,
+				210DB91B281AC1B400210EED /* CartaView.swift in Sources */,
 				2113DF26281603DB00E5BE15 /* Bridge_Helper_2022App.swift in Sources */,
 				2113DF352817795C00E5BE15 /* Cartas.swift in Sources */,
 				2120B13C2818EAC4006BA400 /* SelectorModelView.swift in Sources */,
