@@ -8,61 +8,46 @@
 import SwiftUI
 
 struct ContentView: View {
-@ObservedObject var mazo = Cartas("hearts")
-    @ObservedObject var mazoClubs = Cartas("clubs")
+@ObservedObject var mazo = Cartas(.spades)
   var isUp = true
     var body: some View {
+        ZStack{
+        Color.green
         VStack {
-            ZStack{
-        LazyVGrid(columns: [GridItem(),GridItem(),GridItem(),GridItem()]) {
-            ForEach(mazoClubs.deck, content: {card in
-                CartaView(isUp:true, nameCard: card.imagen)
-                })
-        }
+            Spacer()
                 LazyVGrid(columns: [GridItem(),GridItem(),GridItem(),GridItem()]) {
                     ForEach(mazo.deck, content: {card in
-                        CartaView(isUp:true, nameCard: card.imagen)
+                        CardView(isUp:true, card: card)
                     })
-                }
             }.padding()
         
             Spacer()
             HStack{
                 Text("♠️").font(.largeTitle)
                     .onTapGesture {
-                        mazo.deck = Cartas("spades").deck
+                        mazo.deck = Cartas(.spades).deck
                     }
                 Text("♥️").font(.largeTitle)
                     .onTapGesture {
-                        mazo.deck = Cartas("hearts").deck
+                        mazo.deck = Cartas(.hearts).deck
                     }
                 Text("♦️").font(.largeTitle)
                     .onTapGesture {
-                        mazo.deck = Cartas("diamonds").deck
+                        mazo.deck = Cartas(.diamonds).deck
                     }
                 Text("♣️").font(.largeTitle)
                     .onTapGesture {
-                        mazo.deck = Cartas("clubs").deck
+                        mazo.deck = Cartas(.clubs).deck
                     }
             }
         Spacer()
-            LazyVGrid(columns: [GridItem(),GridItem(),GridItem(),GridItem(),GridItem(),GridItem(),GridItem(),GridItem(),GridItem(),GridItem()]) {
-                CartaView(isUp: false, nameCard: "red_joker")
-                CartaView(isUp: false, nameCard: "red_joker")
-                CartaView(isUp: false, nameCard: "red_joker")
-                CartaView(isUp: false, nameCard: "red_joker")
-                CartaView(isUp: false, nameCard: "red_joker")
-                CartaView(isUp: false, nameCard: "red_joker")
-                CartaView(isUp: false, nameCard: "red_joker")
-                CartaView(isUp: false, nameCard: "red_joker")
-                CartaView(isUp: false, nameCard: "red_joker")
-                CartaView(isUp: false, nameCard: "red_joker")
-//                CartaView(isUp: false, nameCard: "red_joker")
-//                CartaView(isUp: false, nameCard: "red_joker")
-//                CartaView(isUp: false, nameCard: "red_joker")
+            HStack{
+                    PlayerHandView()
             }
-            .padding()
+        Spacer()
         }
+        }
+        .ignoresSafeArea()
     }
 }
 

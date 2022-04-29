@@ -21,6 +21,10 @@
 		2113DF352817795C00E5BE15 /* Cartas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2113DF332817795C00E5BE15 /* Cartas.swift */; };
 		2120B13B2818EAC4006BA400 /* SelectorModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2120B13A2818EAC4006BA400 /* SelectorModelView.swift */; };
 		2120B13C2818EAC4006BA400 /* SelectorModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2120B13A2818EAC4006BA400 /* SelectorModelView.swift */; };
+		21F75A76281AF79D00185E0A /* PlayerHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F75A75281AF79C00185E0A /* PlayerHandView.swift */; };
+		21F75A77281AF79D00185E0A /* PlayerHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F75A75281AF79C00185E0A /* PlayerHandView.swift */; };
+		21F75A79281B6C5500185E0A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F75A78281B6C5500185E0A /* Card.swift */; };
+		21F75A7A281B6C5500185E0A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F75A78281B6C5500185E0A /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,8 @@
 		2113DF24281603DB00E5BE15 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		2113DF332817795C00E5BE15 /* Cartas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cartas.swift; sourceTree = "<group>"; };
 		2120B13A2818EAC4006BA400 /* SelectorModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorModelView.swift; sourceTree = "<group>"; };
+		21F75A75281AF79C00185E0A /* PlayerHandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHandView.swift; sourceTree = "<group>"; };
+		21F75A78281B6C5500185E0A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,11 +72,13 @@
 		2113DF14281603D500E5BE15 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				21F75A78281B6C5500185E0A /* Card.swift */,
+				2113DF332817795C00E5BE15 /* Cartas.swift */,
 				2113DF15281603D500E5BE15 /* Bridge_Helper_2022App.swift */,
 				2113DF16281603D500E5BE15 /* ContentView.swift */,
+				21F75A75281AF79C00185E0A /* PlayerHandView.swift */,
 				210DB916281AC0B100210EED /* GameModel.swift */,
 				210DB919281AC1B400210EED /* CartaView.swift */,
-				2113DF332817795C00E5BE15 /* Cartas.swift */,
 				2120B13A2818EAC4006BA400 /* SelectorModelView.swift */,
 				2113DF17281603DB00E5BE15 /* Assets.xcassets */,
 			);
@@ -193,6 +201,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				210DB917281AC0B100210EED /* GameModel.swift in Sources */,
+				21F75A79281B6C5500185E0A /* Card.swift in Sources */,
+				21F75A76281AF79D00185E0A /* PlayerHandView.swift in Sources */,
 				2113DF27281603DB00E5BE15 /* ContentView.swift in Sources */,
 				210DB91A281AC1B400210EED /* CartaView.swift in Sources */,
 				2113DF25281603DB00E5BE15 /* Bridge_Helper_2022App.swift in Sources */,
@@ -206,6 +216,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				210DB918281AC0B100210EED /* GameModel.swift in Sources */,
+				21F75A7A281B6C5500185E0A /* Card.swift in Sources */,
+				21F75A77281AF79D00185E0A /* PlayerHandView.swift in Sources */,
 				2113DF28281603DB00E5BE15 /* ContentView.swift in Sources */,
 				210DB91B281AC1B400210EED /* CartaView.swift in Sources */,
 				2113DF26281603DB00E5BE15 /* Bridge_Helper_2022App.swift in Sources */,
