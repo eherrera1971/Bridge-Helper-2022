@@ -15,12 +15,15 @@ struct ContentView: View {
         Color.green
         VStack {
             Spacer()
-                LazyVGrid(columns: [GridItem(),GridItem(),GridItem(),GridItem()]) {
-                    ForEach(mazo.deck, content: {card in
-                        CardView(isUp:true, card: card)
+            LazyVGrid(columns: [GridItem(),
+                                GridItem(),
+                                GridItem(),
+                                GridItem()
+                               ])
+            {  ForEach(mazo.deck, content: {card in
+                CardView(isUp:true, card: card)
                     })
-            }.padding()
-        
+            }
             Spacer()
             HStack{
                 Text("♠️").font(.largeTitle)
@@ -40,14 +43,11 @@ struct ContentView: View {
                         mazo.deck = Cartas(.clubs).deck
                     }
             }
-        Spacer()
-            HStack{
-                    PlayerHandView()
-            }
-        Spacer()
+        PlayerHandView().padding(.horizontal)
+            Spacer()
         }
         }
-        .ignoresSafeArea()
+        .ignoresSafeArea(.all)
     }
 }
 
@@ -56,6 +56,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
  ContentView()
             .preferredColorScheme(.light)
+            .padding(.trailing)
         ContentView()
             .preferredColorScheme(.dark)
     }

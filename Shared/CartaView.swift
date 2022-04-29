@@ -31,7 +31,6 @@ struct CardView: View {
                 .onTapGesture {
                     isUp.toggle()
                     print(card.imagen)
-                    print(card.id)
                 }
             }
         }

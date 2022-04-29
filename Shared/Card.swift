@@ -27,6 +27,8 @@ class Card  : Identifiable {
     var num : Int
     var imagen : String {
         switch num {
+        case 15:
+            return "red_joker"
         case 14:
             return Honors.ace.rawValue+"_of_"+suit.rawValue
         case 13:
@@ -45,4 +47,10 @@ class Card  : Identifiable {
         self.suit = suit
         self.num = num
         }
+    
+    init(){
+        self.id = UUID()
+        self.suit = .spades
+        self.num = 15
+    }
 }

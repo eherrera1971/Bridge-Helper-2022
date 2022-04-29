@@ -18,3 +18,14 @@ class Cartas : ObservableObject {
         }
     }
 }
+
+class CartasPlayer : ObservableObject {
+    @Published  var cartasPlayer : Array<Card> = []
+    init() {
+        for _ in (1...13){
+            let carta = Card()
+            self.cartasPlayer.append(carta)
+        }
+    }
+}
+

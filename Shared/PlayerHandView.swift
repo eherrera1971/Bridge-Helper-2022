@@ -8,25 +8,22 @@
 import SwiftUI
 
 struct PlayerHandView: View {
-    
-    var distance: CGFloat = 30
+    @ObservedObject var handSouth = CartasPlayer()
     var body: some View {
-        HStack{
-        ZStack (alignment: .leading){
-            CardView()
-            CardView().offset(x: distance)
-            CardView().offset(x: distance*2)
-            CardView().offset(x: distance*3)
-            CardView().offset(x: distance*4)
-            CardView().offset(x: distance*5)
-            CardView().offset(x: distance*6)
-            CardView().offset(x: distance*7)
-            CardView().offset(x: distance*8)
+        LazyVGrid(columns: [GridItem(),GridItem(),
+                            GridItem(),GridItem(),
+                            GridItem(),GridItem(),
+                            GridItem(),GridItem(),
+                            GridItem(),GridItem(),
+                            GridItem(),GridItem(),
+                            GridItem()
+                           ] ){
+            ForEach(handSouth.cartasPlayer, content: {card in
+                CardView(isUp:true, card: card)
+            })
         }
-            Spacer()
         }
     }
-}
 
 struct PlayerHandView_Previews: PreviewProvider {
     static var previews: some View {
