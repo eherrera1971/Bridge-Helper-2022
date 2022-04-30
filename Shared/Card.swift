@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Suits : String {
+enum Suits : String, CaseIterable {
     case spades
     case hearts
     case diamonds
@@ -39,6 +39,18 @@ class Card  : Identifiable {
             return Honors.jack.rawValue+"_of_"+suit.rawValue
         default:
             return String(num)+"_of_"+suit.rawValue
+        }
+    }
+    var peso : Int {
+        switch suit {
+        case .spades:
+            return 400 + num
+        case .hearts:
+            return 300 + num
+        case .diamonds:
+            return 200 + num
+        case .clubs:
+            return 100 + num
         }
     }
     

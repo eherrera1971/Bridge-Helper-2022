@@ -40,6 +40,7 @@
 		2120B13A2818EAC4006BA400 /* SelectorModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorModelView.swift; sourceTree = "<group>"; };
 		21F75A75281AF79C00185E0A /* PlayerHandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHandView.swift; sourceTree = "<group>"; };
 		21F75A78281B6C5500185E0A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		21F75A7B281B915A00185E0A /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +82,7 @@
 				210DB919281AC1B400210EED /* CartaView.swift */,
 				2120B13A2818EAC4006BA400 /* SelectorModelView.swift */,
 				2113DF17281603DB00E5BE15 /* Assets.xcassets */,
+				21F75A7B281B915A00185E0A /* TODO.md */,
 			);
 			path = Shared;
 			sourceTree = "<group>";

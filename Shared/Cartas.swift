@@ -6,26 +6,36 @@
 //
 
 import Foundation
+import SwiftUI
 
 class Cartas : ObservableObject {
-    var suit : Suits
-    @Published  var deck : Array<Card> = []
-    init(_ suit: Suits) {
-        self.suit = suit
-        for i in (stride(from: 14, to: 1, by: -1)){
+    @Published var deck : Array<Card> = []
+    var clubs :  Array<Card> {
+        return self.deck.filter{$0.suit == .clubs}
+    }
+    var spades :  Array<Card> {
+        return self.deck.filter{$0.suit == .spades}
+    }
+    var hearts :  Array<Card> {
+        return self.deck.filter{$0.suit == .hearts}
+    }
+    var diamonds :  Array<Card> {
+        return self.deck.filter{$0.suit == .diamonds}
+    }
+    init() {
+        for suit in Suits.allCases {
+            for i in (2...14) {
             let carta = Card(suit:suit, num : i)
             self.deck.append(carta)
         }
     }
 }
+}
+
 
 class CartasPlayer : ObservableObject {
     @Published  var cartasPlayer : Array<Card> = []
     init() {
-        for _ in (1...13){
-            let carta = Card()
-            self.cartasPlayer.append(carta)
-        }
     }
 }
 

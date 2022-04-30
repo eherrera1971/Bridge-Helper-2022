@@ -7,28 +7,50 @@
 
 import SwiftUI
 
+struct constantes {
+    let h :CGFloat = 140
+    let w :CGFloat = 100
+    let radius : CGFloat = 3
+}
+
 struct CardView: View {
     @State var isUp : Bool = true
+    @State private var offset = CGSize.zero
+    let const = constantes()
     var card : Card = Card(suit: .spades, num: 14)
+    var accion : (() -> Void)? = nil
+    
             var body: some View {
                 ZStack{
-                    RoundedRectangle(cornerRadius: 12)
-                        .stroke(lineWidth: -1.0)
-                        .background(.red).cornerRadius(12)
-                        .frame(width: 75, height: 100)
-                        .foregroundColor(.black)
                     Image(card.imagen)
                         .resizable()
-                        .frame(width: 63, height: 84)
-//                        .cornerRadius(10)
-                        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: 0.5)
-                    RoundedRectangle(cornerRadius: 12)
+                        .frame(width: const.w, height: const.h)
+                    RoundedRectangle(cornerRadius: const.radius)
                         .fill()
-                        .frame(width: 75, height: 100)
-                        .foregroundColor(.green)
+                        .frame(width: const.w, height: const.h)
+                        .foregroundColor(.blue)
                         .opacity(isUp ? 0 : 1)
                 }
+                .frame(width: const.w, height: const.h)
+                .rotationEffect(.degrees(Double(offset.width / 5 )))
+                .offset(x: offset.width * 5, y: 0)
+                .opacity(2 - Double(abs(offset.width / 50)))
+                .gesture(
+                    DragGesture()
+                        .onChanged({ gesture in
+                            offset = gesture.translation
+                        })
+                        .onEnded({ _ in
+                            if abs(offset.width) > 50 {
+                                accion?()
+                            }
+                            else {
+                                offset = .zero
+                            }
+                        })
+                )
                 .onTapGesture {
+                    accion?()
                     isUp.toggle()
                     print(card.imagen)
                 }

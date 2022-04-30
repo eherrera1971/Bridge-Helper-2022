@@ -7,56 +7,108 @@
 
 import SwiftUI
 
+extension View {
+    func stacked(at position: Int, in total: Int) -> some View {
+        let offset = Double(total - position)
+        return self.offset(x: offset * 24, y: 0)
+    }
+}
+
 struct ContentView: View {
-@ObservedObject var mazo = Cartas(.spades)
-  var isUp = true
+    @StateObject var game = Cartas()
+    @StateObject var handSouth = CartasPlayer()
+    @State var cartasWNE : Array<Card> = []
+    let const = constantes()
+    var isUp = true
     var body: some View {
         ZStack{
-        Color.green
-        VStack {
-            Spacer()
-            LazyVGrid(columns: [GridItem(),
-                                GridItem(),
-                                GridItem(),
-                                GridItem()
-                               ])
-            {  ForEach(mazo.deck, content: {card in
-                CardView(isUp:true, card: card)
-                    })
+            VStack(alignment: .leading) {
+                ZStack {
+                    ForEach(0..<game.spades.count, id: \.self) { index in
+                        CardView(isUp: true, card: game.spades[index])
+                        {withAnimation{accion(carta: game.spades[index])}}
+                            .zIndex(Double(13 - index))
+                            .stacked(at: index, in: game.spades.count)
+                    }}
+                ZStack {
+                    ForEach(0..<game.hearts.count, id: \.self) { index in
+                        CardView(isUp: true, card: game.hearts[index])
+                        {withAnimation{accion(carta: game.hearts[index])}}
+                            .zIndex(Double(13 - index))
+                            .stacked(at: index, in: game.hearts.count)
+                    }
+                }
+                ZStack {
+                    ForEach(0..<game.diamonds.count, id: \.self) { index in
+                        CardView(isUp: true, card: game.diamonds[index])
+                        {
+                            withAnimation{
+                                accion(carta: game.diamonds[index])}
+                        }
+                        .zIndex(Double(13 - index))
+                        .stacked(at: index, in: game.diamonds.count )
+                        
+                    }
+                }
+                ZStack {
+                    ForEach(0..<game.clubs.count, id: \.self) { index in
+                        CardView(isUp: true, card: game.clubs[index])
+                        {
+                            withAnimation{
+                                accion(carta: game.clubs[index])}
+                        }
+                        .zIndex(Double(13 - index))
+                        .stacked(at: index, in: game.clubs.count)
+                        
+                    }
+                }
+                Spacer()
+                ZStack(alignment: .leading){
+                    Rectangle().frame(height:const.h + 15)
+                        .foregroundColor(.black)
+                    ForEach(0..<handSouth.cartasPlayer.count, id: \.self) { index in
+                        CardView(isUp: true, card: handSouth.cartasPlayer[index])
+                            .zIndex(Double(13 - index))
+                            .stacked(at: index, in: handSouth.cartasPlayer.count)
+                    }
+                }
             }
-            Spacer()
-            HStack{
-                Text("♠️").font(.largeTitle)
-                    .onTapGesture {
-                        mazo.deck = Cartas(.spades).deck
-                    }
-                Text("♥️").font(.largeTitle)
-                    .onTapGesture {
-                        mazo.deck = Cartas(.hearts).deck
-                    }
-                Text("♦️").font(.largeTitle)
-                    .onTapGesture {
-                        mazo.deck = Cartas(.diamonds).deck
-                    }
-                Text("♣️").font(.largeTitle)
-                    .onTapGesture {
-                        mazo.deck = Cartas(.clubs).deck
-                    }
+        }
+        .background(
+            Image("fondo")
+                .resizable()
+                .ignoresSafeArea()
+        )
+    }
+    
+    func accion (carta : Card) {
+        if handSouth.cartasPlayer.count < 13 {
+            if handSouth.cartasPlayer.contains(where: {$0.peso == carta.peso}) {
+                handSouth.cartasPlayer = handSouth.cartasPlayer.filter({$0.peso != carta.peso})
+            } else {
+                //item could not be found
+                handSouth.cartasPlayer.append(carta)
+                handSouth.cartasPlayer = handSouth.cartasPlayer.sorted (by : {$0.peso < $1.peso})
             }
-        PlayerHandView().padding(.horizontal)
-            Spacer()
+        } else
+        {
+            moverCartas()
         }
+    }
+    
+    func moverCartas() {
+        for carta in game.deck {
+            cartasWNE.append(carta)
         }
-        .ignoresSafeArea(.all)
+            game.deck.removeAll()
     }
 }
 
 
-struct ContentView_Previews: PreviewProvider {
+struct ContentView_Previewsa: PreviewProvider {
     static var previews: some View {
- ContentView()
+        ContentView()
             .preferredColorScheme(.light)
-            .padding(.trailing)
         ContentView()
             .preferredColorScheme(.dark)
     }
